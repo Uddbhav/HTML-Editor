@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Testing</title>
+    <style>
+        table, th, td {
+        padding: 4px;
+        border-spacing: 10px;
+        }
+        #html-code {
+            resize: none;
+            height: 450px;
+            width: 675px;
+            font-size: xx-large;
+        }
+        #output {
+            resize: none;
+            height: 450px;
+            width: 675px;
+        }
+    </style>
+</head>
+<body>
+        <table>
+            <tr>
+                <th><h1>HTML Code</h1></th>
+                <th><h1>Output Screen</h1></th>
+            </tr>
+            <tr>
+                <td><div class="editor">
+                    <textarea id="html-code" placeholder="Write content of HTML body here. "></textarea> </div>
+                </td>
+                <td><div class="view">
+                    <iframe id="output"></iframe></div>
+                </td>
+            </tr>
+        </table>
+    <script>
+        function run(){
+            let htmlCode = document.querySelector(".editor #html-code").value;
+            let output = document.querySelector(".view #output");
+            output.contentDocument.body.innerHTML = htmlCode
+        }
+        document.querySelector(".editor #html-code").addEventListener("keyup",run);
+    </script>
+</body>
+</html>
